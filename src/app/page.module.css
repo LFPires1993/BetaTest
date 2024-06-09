@@ -1,0 +1,14 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 35px - 45px);
+  margin-top: -50px;
+  width: 100%;
+}
+
+.logo {
+  width: 150px;
+  object-fit: scale-down;
+}

@@ -1,0 +1,26 @@
+.header {
+    height: 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.button {
+    padding: 5px 15px;
+    border-radius: 5px;
+    margin-left: 5px;
+    background-color: #fff;
+    color: #4720AF;
+    border: 1px solid #4720AF;
+    font-weight: bold;
+}
+
+.button:hover {
+
+    border-style: none;
+    background-color: #4720AF;
+    border: 1px solid #4720AF;
+    color: #fff;
+}

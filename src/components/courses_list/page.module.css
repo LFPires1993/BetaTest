@@ -1,0 +1,31 @@
+.paginator {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    justify-content: space-evenly;
+}
+
+.list_item {
+    padding: 0px;
+}
+
+.unselected_page {
+    font-size: 15px;
+    border-style: none;
+    color: #4720AF;
+}
+
+.unselected_page:hover {
+    border-radius: 5px;
+    background-color: #4720AF;
+    color: #fff;
+}
