@@ -4,7 +4,6 @@
     justify-content: flex-end;
     align-items: center;
     width: 100%;
-    
 }
 
 .button {
@@ -18,7 +17,6 @@
 }
 
 .button:hover {
-
     border-style: none;
     background-color: #4720AF;
     border: 1px solid #4720AF;

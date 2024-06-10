@@ -8,7 +8,7 @@ type postCourseType = {
 
 export async function postCourse(course: postCourseType) {
     const url: string = process.env.NEXT_PUBLIC_DUMMY_PRODUCTS_URL as string;
-    
+
     await fetch(`${url}/add`, {
         method: 'POST',
         cache: "no-store",
@@ -21,5 +21,5 @@ export async function postCourse(course: postCourseType) {
             "price": course.price
         })
     })
-    
+
 }

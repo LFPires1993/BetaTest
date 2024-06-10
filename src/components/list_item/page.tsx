@@ -1,16 +1,20 @@
 'use client'
-import { IProducts } from "@/services/interfaces/IProducts";
 import styles from "./page.module.css";
-import Image from "next/image";
-import imageDefault from "@/assets/image-default.jpg"
 
+import Image from "next/image";
+import { useState } from "react";
+
+import { IProducts } from "@/services/interfaces/IProducts";
+
+import imageDefault from "@/assets/image-default.jpg"
 import editIcon from '@/assets/edit-icon.png'
 import deleteIcon from '@/assets/delete-icon.png'
+
 import { ConfirmationModalComponent } from "../confirmation_modal/page";
-import { useState } from "react";
 
 export function ListItem({course}: {course: IProducts}) {
     const [showModal, setShowModal] = useState(false);
+
     return (
         <div key={course.id} className={styles.container}>
             <Image
@@ -26,23 +30,27 @@ export function ListItem({course}: {course: IProducts}) {
                     <p className={styles.p}>{course.description}</p>
                 </div>
                 <button className={styles.button}>
-                    <Image 
+                    <Image
                         src={editIcon}
                         alt="Icone de edição"
                         className={styles.icon}
                     />
                 </button>
                 <button className={styles.button}>
-                <Image 
-                        src={deleteIcon}
-                        alt="Icone de deleção"
-                        className={styles.button}
-                        onClick={() => {
-                            setShowModal(true)
-                        }}
-                    />
+                    <Image
+                            src={deleteIcon}
+                            alt="Icone de deleção"
+                            className={styles.button}
+                            onClick={() => {
+                                setShowModal(true)
+                            }}
+                        />
                 </button>
-                {showModal ? <ConfirmationModalComponent closeModal={setShowModal} id={course.id} /> : <></>}
+                {
+                    showModal
+                        ? <ConfirmationModalComponent closeModal={setShowModal} id={course.id} />
+                        : <></>
+                }
             </div>
         </div>
     )

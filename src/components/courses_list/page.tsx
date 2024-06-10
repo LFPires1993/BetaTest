@@ -1,9 +1,11 @@
 'use client'
 
 import styles from "./page.module.css";
+
 import { useState } from "react";
-import { IProducts } from "@/services/interfaces/IProducts";
 import { ListItem } from "../list_item/page";
+
+import { IProducts } from "@/services/interfaces/IProducts";
 
 interface IListCoursesParams {
     params: {
@@ -14,7 +16,7 @@ interface IListCoursesParams {
 export function CoursesListComponent({params}: IListCoursesParams) {
     const [getPage, setPage] = useState(1);
     const [getCourses, setCourses] = useState<IProducts[]>(paginateArray(params.courses, 1));
-    
+
     const getTotalPages = () => {
         const value = params.courses.length / 10;
         if(value.toFixed().split('.')[1] != '0') {
@@ -25,14 +27,14 @@ export function CoursesListComponent({params}: IListCoursesParams) {
     }
 
     const totalPages = getTotalPages();
-    
+
     function getPaginator() {
         return(
             [...Array(totalPages)].map((_, index) => {
                 const pageNumber = index + 1;
                 return (
                     <ol className={styles.list_item} key={pageNumber}>
-                        <button className={styles.unselected_page} 
+                        <button className={styles.unselected_page}
                         onClick={() => {
                             setCourses(paginateArray(params.courses, pageNumber))
                         }}>
@@ -44,20 +46,20 @@ export function CoursesListComponent({params}: IListCoursesParams) {
         )
     }
 
-    function paginateArray(array: IProducts[], newPage: number): IProducts[] {  
+    function paginateArray(array: IProducts[], newPage: number): IProducts[] {
         if(getPage != 1) setPage(newPage);
         const startIndex = (newPage - 1) * 10;
         const endIndex = startIndex + 10;
         return array.slice(startIndex, endIndex);
     }
-    
+
     return (
         <>
-            {             
-                getCourses.length == 0 
+            {
+                getCourses.length == 0
                     ? (
                         <div>Nenhum curso encontrado!</div>
-                    ) 
+                    )
                     : getCourses.map((item) => (
                         <ListItem key={item.id} course={item} />
                     )

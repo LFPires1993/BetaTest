@@ -1,6 +1,8 @@
 'use client'
-import { useState } from "react";
+
 import styles from '@/app/management/page.module.css'
+
+import { useState } from "react";
 import { postCourse } from "@/services/post-course.service";
 
 export default function ManagementPage() {
@@ -27,7 +29,7 @@ export default function ManagementPage() {
                 <label className={styles.label}>
                     Nome do curso:
                     <input className={styles.input} type="text" value={name} onChange={(e) => setName(e.target.value)} />
-                </label>                
+                </label>
                 <label className={styles.label}>
                     Categoria:
                     <input className={styles.input} type="text" value={category} onChange={(e) => setCategory(e.target.value)} />

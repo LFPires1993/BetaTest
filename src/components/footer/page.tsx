@@ -1,9 +1,9 @@
 import styles from "./page.module.css";
-import Image from "next/image";
 
-import logoImage from '@/assets/una logo.png'
+import Image from "next/image";
 import Link from "next/link";
 
+import logoImage from '@/assets/una logo.png'
 import FacebookIcon from '@/assets/facebook-icon.png'
 import instagramIcon from '@/assets/instagram-icon.png'
 import LinkedinIcon from '@/assets/linkedlin-icon.png'
@@ -14,14 +14,14 @@ export function FooterComponent() {
         <div className={styles.footer}>
             <Link
                 href={'/'}>
-                <Image 
+                <Image
                     src={logoImage}
                     alt="Una Cursos Logotipo"
                     className={styles.logo}
                 />
             </Link>
             <div className={styles.buttons_container}>
-                <button 
+                <button
                     className={styles.button}>
                     <Image
                         src={FacebookIcon}
